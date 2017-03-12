@@ -2,39 +2,39 @@
 <html lang="zh-CN">
 
 <head>
-	<script>
-	//获取皮肤ID
-function GetRequest() {
-    var url = location.search;
-    var theRequest = new Object();
-    if (url.indexOf("?") != -1) {
-        var str = url.substr(1);
-        strs = str.split("&");
-        for (var i = 0; i < strs.length; i++) {
-            theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+  <script src="https://godbiao.github.io/skins/js/skins.js">
+    <script>
+        //获取皮肤ID
+        function GetSkinID() {
+            var herf = window.location.href;
+            var sn = herf.substr(herf.indexOf('?') + 1, herf.length);
+            var s_len = skins.length;
+            var skinNum = s_len - sn;
+            if (skinNum >= 0 && skinNum < s_len) {
+                return skins[skinNum].id;
+            } else {
+                alert("此皮肤还未上线");
+                window.location.href = "https://godbiao.github.io/skins";
+            }
         }
-    }
-    return theRequest;
-}
-var Request = new Object();
-Request = GetRequest();
-var skinID = Request['id'];
-if(skinID){
-window.location.href = "https://godbiao.github.io/skins/item.html?id="+skinID;
-}else{
-window.location.href = "https://godbiao.github.io/skins";
-}
-		
-	</script>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>jump</title>
-	<script src="https://godbiao.github.io/common/js/head.js"></script>
+
+        var skinID = GetSkinID();
+        if (skinID) {
+            window.location.href = "https://godbiao.github.io/skins/item.html?id=" + skinID;
+        } else {
+            window.location.href = "https://godbiao.github.io/skins";
+        }
+
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>jump</title>
+    <script src="https://godbiao.github.io/common/js/head.js"></script>
 </head>
 
 <body>
-	
+
 </body>
 
 </html>
