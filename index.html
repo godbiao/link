@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-  <script src="https://godbiao.github.io/skins/js/skins.js"> </script>
+    <script src="https://godbiao.github.io/skins/js/skins.js">
+    </script>
     <script>
         //获取皮肤ID
         function GetSkinID() {
@@ -13,8 +13,7 @@
             if (skinNum >= 0 && skinNum < s_len) {
                 return skins[skinNum].id;
             } else {
-                //alert("此皮肤还未上线");
-                window.location.href = "https://godbiao.github.io/skins/?"+sn;
+                window.location.href = "https://godbiao.github.io/skins";
             }
         }
 
@@ -24,7 +23,6 @@
         } else {
             window.location.href = "https://godbiao.github.io/skins";
         }
-
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
